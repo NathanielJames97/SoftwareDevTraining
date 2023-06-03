@@ -169,3 +169,69 @@ The output is called a result set
 Predicate evaluates to <True> <False> or <unknown>
 
 Used in the search conditoon of the Where clause
+
+
+e.g. ``` 
+
+db2 => select book_id, title from Book
+        WHERE book_id='B1'
+
+```
+
+Operaters:
+
+- =
+- >
+- <
+- >=
+etc..
+
+
+
+
+## COUNT, DISTRICT, LIMIT
+
+### COUNT
+
+<COUNT> - A built in fuction that retrevies the number of rows matching the query criteria.
+
+Number of rows in a table:
+``` select COUNT(*) from tablename ```
+
+E.g How many Rows in the MEDALS table from Country is Canada:
+
+``` select COUNT(COUNTRY) from MEDALS
+            where COUNTRY = 'CANADA'
+```
+
+### DISTINCT
+
+DISTINCT is used to remove duplicate values from a result set.
+
+E.g List of unique countries that recieved GOLD medals:
+
+``` 
+select DISTINCT COUNTRY from MEDALS
+        where MEDALTYPE = 'GOLD'
+```
+
+### LIMIT
+
+<LIMIT> is used for restricting the number of rows retrieved from the database
+
+e.g: Retrieve 5 rows in the MEDALS table for a particular year:
+
+``` 
+select * from MEDALS
+        where YEAR = 2018 LIMIT 5
+```
+
+## INSERT statement
+
+Adds rows to a table
+
+1. Create the table (CREAT TABLE statement)
+
+2. Populate table with data:
+    > INSERT statement
+
