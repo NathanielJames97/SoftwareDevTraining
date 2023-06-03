@@ -235,3 +235,80 @@ Adds rows to a table
 2. Populate table with data:
     > INSERT statement
 
+### Using the INSERT statement
+
+```
+
+INSERT INTO [TableName]
+    <([ColumnName],...)>
+VALUES ([Value],...)
+
+```
+
+<E.G>
+
+```
+
+INSERT INTO AUTHOR
+    (AUTHOR_ID, LASTNAME, FIRSTNAME, EMAIL, CITY, COUNTRY)
+VALUES ('A1', 'Chong', 'Raul', 'rfc@ibm.com', 'Toronto', 'CA')
+
+```
+
+### Inseritng multiple rows
+
+<E.G>
+
+```
+INSERT INTO AUTHOR
+    (AUTHOR_ID, LASTNAME, FIRSTNAME, EMAIL, CITY, COUNTRY)
+VALUES
+    ('A1', 'Chong', 'Raul', 'rfc@ibm.com', 'Toronto', 'CA')
+    ('A2', 'Chang', 'Ralf', 'rfdc@ibm.com', 'Toronto', 'CA')
+
+```
+
+
+## UPDATE and DELETE statements
+
+After creating a table and isneritng data into the table we can alter the data.
+
+<E.G>
+
+```
+
+UPDATE [TableName]
+SET [[ColumnName]=[Value]]
+<WHERE [Condition]>
+
+```
+
+<E.G>
+
+```
+
+UPDATE AUTHOR
+SET LASTNAME='KATTA'
+FIRSTNAME='LAKSHMI'
+WHERE AUTHOR_ID = '2'
+
+
+```
+### Delete
+
+- Used to remove 1 or more rows from the table
+
+<E.G>
+
+```
+DELETE FROM [TableName]
+<WHERE [Condition]>
+```
+
+<E.G>
+
+```
+DELETE FROM AUTHOR
+    WHERE AUTHOR_ID IN ('A2', 'A3')
+```
+
