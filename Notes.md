@@ -312,3 +312,47 @@ DELETE FROM AUTHOR
     WHERE AUTHOR_ID IN ('A2', 'A3')
 ```
 
+# Module 2 - ORM , Object-Relational Mapping
+
+## OMR
+
+Developers often need to intergrate SQL with programming languages sing database API's
+
+- OOP Models entities using classes objectd and attributes
+
+- OOP Models relationships using inheritance, association, aggregation, and so on
+
+- OOP Performs CRUD on data using methods
+
+- SQL Models entities using tables, rows and columns
+
+- Models relationships using JOIN and FOREIGN KEY
+
+- SQL Performs CRUD on data using Data Manipulation Language (DML)
+
+
+ORM bridges the gap between OOP and SQL
+
+### Popular ORM Libraries
+
+Python - Django, SQL Alchemy
+
+JS - Sequelize
+
+### Pros and Cons of ORM
+
+Pros:
+
+Class designs define databses (no SQL DDS)
+Use DB's without writing SQL
+
+Single set of APIs for different databases
+
+Cons:
+Impedance mismatch
+Moves data access complexity to application code
+Hides implimentaiton details, difficult to debug
+*May* impact performance
+
+
+
