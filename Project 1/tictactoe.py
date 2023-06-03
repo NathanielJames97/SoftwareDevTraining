@@ -174,7 +174,40 @@ def next_turn(turn):
                                                                 if turn == X:
                                                                     return O
                                                                 else:
-                                                                    return X        
-                                                                
-def congrat_winner(the_winner, computer, human):
-        
+                                                                    return X
+
+def full_board(board):
+    """Return True if the board is full, False otherwise."""
+    return all(cell != EMPTY for cell in board)
+
+def print_board(board):
+    """Print the Tic Tac Toe board."""
+    print(board[0], board[1], board[2])
+    print(board[3], board[4], board[5])
+    print(board[6], board[7], board[8])
+
+def get_move(board):
+    """Get the player's move."""
+    while True:
+        try:
+            move = int(input("Enter your move (0-8): "))
+            if move not in legal_moves(board):
+                print("Invalid move. Please try again.")
+            else:
+                return move
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+# Example usage:
+board = [EMPTY] * 9
+turn = X
+while not winner(board) and not full_board(board):
+    print_board(board)
+    move = get_move(board)
+    board[move] = turn
+    turn = next_turn(turn)
+print_board(board)
+if winner(board):
+    print(next_turn(turn), "wins!")
+else:
+    print("Tie game.")
