@@ -13,8 +13,8 @@ class TicTacToeUI:
         self.buttons = []
         for i in range(9):
             button = tk.Button(self.window, text=" ", width=10, height=5,
-                               command=lambda idx=i: self.make_move(idx))
-            button.grid(row=i // 3, column=i % 3)
+                               font=("Arial", 20, "bold"), command=lambda idx=i: self.make_move(idx))
+            button.grid(row=i // 3, column=i % 3, padx=5, pady=5)
             self.buttons.append(button)
         
         self.display_instructions()
@@ -24,8 +24,9 @@ class TicTacToeUI:
     
     def display_instructions(self):
         instructions = tk.Label(self.window, text="Welcome to Tic-Tac-Toe!\n\n"
-                                                  "Make your move by clicking on a square.")
-        instructions.grid(row=3, columnspan=3)
+                                                  "Make your move by clicking on a square.",
+                                font=("Arial", 14))
+        instructions.grid(row=3, columnspan=3, pady=10)
         
     def pieces(self):
         go_first = tk.messagebox.askyesno("Tic-Tac-Toe", "Do you require the first move?")
@@ -81,7 +82,7 @@ class TicTacToeUI:
             message = "You lost! Better luck next time."
         else:
             message = "It's a tie!"
-            tk.messagebox.showinfo("Game Over", message)
+        tk.messagebox.showinfo("Game Over", message)
         self.window.quit()
 
 # Start the Tic-Tac-Toe game
